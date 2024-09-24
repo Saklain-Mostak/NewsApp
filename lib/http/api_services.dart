@@ -34,7 +34,6 @@ class ApiService {
         print(e);
       }
     }
-
     return null;
   }
 }

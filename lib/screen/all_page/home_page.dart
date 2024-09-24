@@ -45,6 +45,7 @@ class _HomePageState extends State<HomePage> {
                       newsHeadLineModel!.isNotEmpty)) {
                 return Column(
                   mainAxisSize: MainAxisSize.min,
+                  
                   children: [
                     SizedBox(
                       height: height / 25,
