@@ -48,13 +48,12 @@ class Articles {
       this.content});
 
   Articles.fromJson(Map<String, dynamic> json) {
-    source =
-        json['source'] != null ? Source.fromJson(json['source']) : null;
+    source = json['source'] != null ? Source.fromJson(json['source']) : null;
     author = json['author'];
     title = json['title'];
     description = json['description'];
     url = json['url'];
-    urlToImage = json['urlToImage'];
+    urlToImage = json['urlToImage']?? "https://t4.ftcdn.net/jpg/04/73/25/49/240_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg";
     publishedAt = json['publishedAt'];
     content = json['content'];
   }

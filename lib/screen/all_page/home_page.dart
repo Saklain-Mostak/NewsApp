@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -45,7 +46,6 @@ class _HomePageState extends State<HomePage> {
                       newsHeadLineModel!.isNotEmpty)) {
                 return Column(
                   mainAxisSize: MainAxisSize.min,
-                  
                   children: [
                     SizedBox(
                       height: height / 25,
@@ -161,14 +161,24 @@ class _HomePageState extends State<HomePage> {
                                   child: Stack(
                                     children: [
                                       ClipRRect(
-                                        borderRadius: BorderRadius.circular(20),
-                                        child: Image.network(
-                                          imageUrl ?? 'assets/placeholder.png',
-                                          fit: BoxFit.cover,
-                                          height: height / 4,
-                                          width: width / 1.10,
-                                        ),
-                                      ),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          child:
+
+                                              // Image.network(
+                                              //   imageUrl.toString() ,
+                                              // fit: BoxFit.cover,
+                                              // height: height / 4,
+                                              // width: width / 1,
+                                              // ),
+                                              CachedNetworkImage(
+                                            imageUrl: imageUrl.toString(),
+                                            fit: BoxFit.cover,
+                                            height: height / 4,
+                                            width: width / 1.15,
+                                            placeholder: (context, url) =>
+                                                const Center(child: CircularProgressIndicator()),
+                                          )),
                                       Positioned(
                                           bottom: 0,
                                           right: 13,
@@ -231,13 +241,15 @@ class _HomePageState extends State<HomePage> {
                                                         //     .toString()),
 
                                                         Text(
+
+                                                          overflow: TextOverflow.ellipsis,
                                                           Jiffy.parse(articles[
                                                                       index]
                                                                   .publishedAt
                                                                   .toString())
                                                               .format(
                                                                   pattern:
-                                                                      'MMMM do yyyy, h:mm a'),
+                                                                      'MMMM yyyy'),
                                                           style: const TextStyle(
                                                               letterSpacing:
                                                                   0.7,
@@ -246,7 +258,7 @@ class _HomePageState extends State<HomePage> {
                                                                       .bold,
                                                               backgroundColor:
                                                                   Colors.white,
-                                                              fontSize: 12,
+                                                              fontSize: 15,
                                                               color:
                                                                   Colors.black),
                                                         )
