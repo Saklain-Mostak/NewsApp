@@ -1,4 +1,5 @@
 # Miscellaneous
+news_api.dart
 *.class
 *.log
 *.pyc

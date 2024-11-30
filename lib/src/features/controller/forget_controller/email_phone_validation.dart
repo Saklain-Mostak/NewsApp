@@ -39,6 +39,6 @@ class EmailPhoneValidationController extends GetxController {
       return 'Email must contain a domain (e.g., .com)';
     }
 
-    return null; // যদি কোনো ভুল না থাকে, null রিটার্ন করবে
+    return null; 
   }
 }
