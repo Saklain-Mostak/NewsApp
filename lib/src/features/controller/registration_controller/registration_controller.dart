@@ -15,7 +15,7 @@ class RegistrationController extends GetxController {
 
   String? validName(String? value) {
     if (value!.isEmpty) {
-      return 'Name cannot be empty';
+      return 'Name cannot be empty ';
     } else if (value.length < 2 || value.length > 50) {
       return 'Name must be between 2 and 50 characters';
     } else if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
