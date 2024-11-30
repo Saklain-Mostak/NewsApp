@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:news_app/model/news_model.dart';
@@ -60,7 +61,6 @@ Widget headlinehomepage(
                 context,
                 MaterialPageRoute(
                     builder: (_) => HeadLineDetailsScreen(
-                        
                         srcName: articlesHeadline.source!.name.toString(),
                         author: articlesHeadline.author.toString(),
                         title: articlesHeadline.title.toString(),
@@ -72,35 +72,28 @@ Widget headlinehomepage(
           },
           child: SizedBox(
             child: Padding(
-              padding: const EdgeInsets.only(right: 14, left: 14),
-              child: ListTile(
-                  title: Text(
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    articlesHeadline!.title.toString(),
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  subtitle: Text(
-                    "By ${articlesHeadline.source!.name.toString()}",
-                    style: const TextStyle(fontSize: 15),
-                  ),
-                  leading: ClipRRect(
+                padding: const EdgeInsets.only(right: 14, left: 14),
+                child: ListTile(
+                    title: Text(
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      articlesHeadline!.title.toString(),
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text(
+                      "By ${articlesHeadline.source!.name.toString()}",
+                      style: const TextStyle(fontSize: 15),
+                    ),
+                    leading: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
-                      child: Image.network(
+                      child: CachedNetworkImage(
+                        imageUrl: articlesHeadline.urlToImage.toString(),
                         height: height / 4,
                         width: width / 5,
-                        articlesHeadline.urlToImage.toString(),
                         fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) =>
-                            Image.network(
-                          "https://cdn.pixabay.com/photo/2012/04/01/18/53/red-24018_1280.png",
-                          height: height / 4,
-                          width: width / 5,
-                          fit: BoxFit.cover,
-                        ),
-                      ))),
-            ),
+                      ),
+                    ))),
           ),
         );
       },
