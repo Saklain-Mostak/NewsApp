@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:news_app/src/common_widjet/login_registration/custom_text_form_field.dart';
 import 'package:news_app/src/common_widjet/login_registration/lonin_registration_button.dart';
 import 'package:news_app/src/features/controller/log_in_controller/login_controller.dart';
-import 'package:news_app/src/features/screen/demo_screen/demo_screen.dart';
+import 'package:news_app/src/features/screen/screen1/home_screen/home_screen1.dart';
 
 class LogInForm extends StatelessWidget {
   const LogInForm({
@@ -75,7 +75,7 @@ class LogInForm extends StatelessWidget {
                   print(
                       "==================================LogIn Done====================");
 
-                  Get.to(() => const DemoScreen());
+                  Get.off(() => const HomeScreen());
                 } else {
                   Get.snackbar("Failed!", "Please fillup the form");
                   // ignore: avoid_print

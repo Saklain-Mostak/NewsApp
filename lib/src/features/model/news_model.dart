@@ -1,4 +1,4 @@
-import 'package:news_app/model/news_head_line_model.dart';
+import 'package:news_app/src/features/model/news_head_line_model.dart';
 
 class NewsModel {
   NewsHeadLineModel? newsHeadLineModel;
