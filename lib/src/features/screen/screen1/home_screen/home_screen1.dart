@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/screen/all_page/account_page.dart';
-import 'package:news_app/screen/all_page/home_page.dart';
-import 'package:news_app/screen/all_page/search_page.dart';
+import 'package:news_app/src/features/screen/screen1/all_page/account_page.dart';
+import 'package:news_app/src/features/screen/screen1/all_page/home_page.dart';
+import 'package:news_app/src/features/screen/screen1/all_page/search_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:news_app/http/api_services.dart';
-import 'package:news_app/model/news_model.dart';
-import 'package:news_app/screen/all_page/screen_details/details_screen.dart';
-import 'package:news_app/screen/headline_of_home_screen/headline.dart';
+import 'package:news_app/src/features/controller/app_controller/api_services.dart';
+import 'package:news_app/src/features/model/news_model.dart';
+import 'package:news_app/src/features/screen/screen1/all_page/screen_details/details_screen.dart';
+import 'package:news_app/src/features/screen/screen1/headline_of_home_screen/headline.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

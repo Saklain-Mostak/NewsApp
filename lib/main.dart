@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:news_app/firebase_options.dart';
 //import 'package:news_app/src/features/screen/login_screen/login.dart';
 // ignore: unused_import
-import 'package:news_app/screen/home_screen/home_screen1.dart';
+
 import 'package:news_app/src/features/controller/theme_controller/theme_controller.dart';
 import 'package:news_app/src/features/screen/login_screen/login.dart';
 

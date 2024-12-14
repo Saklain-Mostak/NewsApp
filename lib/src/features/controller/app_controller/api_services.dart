@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:news_app/http/news_api.dart';
-import 'package:news_app/model/news_head_line_model.dart';
-import 'package:news_app/model/news_model.dart';
+import 'package:news_app/src/features/controller/app_controller/news_api.dart';
+import 'package:news_app/src/features/model/news_head_line_model.dart';
+import 'package:news_app/src/features/model/news_model.dart';
 
 class ApiService {
   NewsModel? newsModel;

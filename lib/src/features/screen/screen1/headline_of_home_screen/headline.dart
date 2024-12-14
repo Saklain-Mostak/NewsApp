@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:news_app/model/news_model.dart';
-import 'package:news_app/screen/all_page/screen_details/details_screen.dart';
+import 'package:news_app/src/features/model/news_model.dart';
+import 'package:news_app/src/features/screen/screen1/all_page/screen_details/details_screen.dart';
 
 Widget headlineBase(BuildContext context) {
   // ignore: prefer_typing_uninitialized_variables
