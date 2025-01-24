@@ -49,6 +49,7 @@ dependencies:
   cloud_firestore: ^5.4.4
   firebase_analytics: ^11.1.0
   firebase_storage: ^12.3.4
+  draggable_fab: ^0.1.4
 
 
 

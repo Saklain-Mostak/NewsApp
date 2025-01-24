@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:news_app/src/common_widjet/login_registration/login_registration_footer.dart';
 import 'package:news_app/src/common_widjet/login_registration/login_registration_header.dart';
 import 'package:news_app/src/common_widjet/login_registration/lonin_registration_button.dart';
+import 'package:news_app/src/features/controller/auth_controller/auth_controller.dart';
 import 'package:news_app/src/features/controller/log_in_controller/login_controller.dart';
 import 'package:news_app/src/features/controller/registration_controller/registration_controller.dart';
 import 'package:news_app/src/features/screen/login_screen/login.dart';
@@ -46,12 +47,12 @@ class Registration extends StatelessWidget {
                         registrationController
                             .r_registration_formkey.currentState!
                             .validate()) {
-                      Get.snackbar("Success!", "Successfully Registration");
-                      // ignore: avoid_print
-                      print(
-                          "==================================Registration Done====================");
+                      AuthController.instance.register(
+                          registrationController.r_email_controller.text.trim(),
+                          registrationController.r_password_controller.text
+                              .trim());
 
-                      Get.off(() => const LogIn());
+                      Get.off(()=>const LogIn());
                     } else {
                       Get.snackbar("Failed!", "Please fillup the form");
                       // ignore: avoid_print
