@@ -1,5 +1,5 @@
 class NewsApi {
-  static const String apiKey = "e1742ffd1ddc40baba9f25b606b9301e";
+  static const String apiKey = "**************";
 
 
 // https:***************=bitcoin&apiKey=
