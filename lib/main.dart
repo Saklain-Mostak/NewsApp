@@ -2,11 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:news_app/firebase_options.dart';
+import 'package:news_app/src/bindings/auth_binding.dart';
 //import 'package:news_app/src/features/screen/login_screen/login.dart';
 // ignore: unused_import
 
 import 'package:news_app/src/features/controller/theme_controller/theme_controller.dart';
-import 'package:news_app/src/features/screen/login_screen/login.dart';
+import 'package:news_app/src/routing/app_pages.dart';
+import 'package:news_app/src/routing/app_route.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,11 +31,18 @@ class MyApp extends StatelessWidget {
         theme: ThemeData.light(),
         darkTheme: ThemeData.dark(),
         themeMode: themeController.getThemeMode(),
-        home:
 
-            //const Registration()
+      
 
-            const LogIn()
+      initialBinding: AuthBinding(),
+      initialRoute: AppRoutes.login,
+      getPages: AppPages.pages,
+
+
+      //  home:  const LogIn()
+
+         //const Registration()
+
         //const HomeScreen()
 
         //const HomePage(),

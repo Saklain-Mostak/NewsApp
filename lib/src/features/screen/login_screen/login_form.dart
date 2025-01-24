@@ -4,18 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:news_app/src/common_widjet/login_registration/custom_text_form_field.dart';
 import 'package:news_app/src/common_widjet/login_registration/lonin_registration_button.dart';
+import 'package:news_app/src/features/controller/auth_controller/auth_controller.dart';
 import 'package:news_app/src/features/controller/log_in_controller/login_controller.dart';
-import 'package:news_app/src/features/screen/screen1/home_screen/home_screen1.dart';
 
 class LogInForm extends StatelessWidget {
   const LogInForm({
     super.key,
-
     required this.height,
     required this.login_controller,
     required this.width,
   });
-
 
   final double height;
   final LogInController login_controller;
@@ -70,12 +68,13 @@ class LogInForm extends StatelessWidget {
 
                     //login_controller!.formkey.currentState!.validate()&&
                     login_controller.l_login_formkey.currentState!.validate()) {
-                  Get.snackbar("Success!", "Successfully LogIn");
-                  // ignore: avoid_print
-                  print(
-                      "==================================LogIn Done====================");
 
-                  Get.off(() => const HomeScreen());
+
+                  AuthController.instance.login(
+                      login_controller.login_email_controller.text.trim(),
+                      login_controller.login_password_controller.text.trim());
+
+                //  Get.off(() => const HomeScreen());
                 } else {
                   Get.snackbar("Failed!", "Please fillup the form");
                   // ignore: avoid_print
@@ -90,7 +89,6 @@ class LogInForm extends StatelessWidget {
               login_registration_text: 'Sign In',
             )
           ],
-        )
-        );
+        ));
   }
 }
