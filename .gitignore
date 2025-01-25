@@ -1,5 +1,4 @@
 # Miscellaneous
-.news_api.dart
 *.class
 *.log
 *.pyc
@@ -42,3 +41,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Ignore specific Dart file
+lib/src/features/controller/app_controller/news_api.dart
