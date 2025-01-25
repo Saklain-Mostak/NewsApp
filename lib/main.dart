@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       
 
       initialBinding: AuthBinding(),
-      initialRoute: AppRoutes.login,
+      initialRoute: AppRoutes.homeScreen,
       getPages: AppPages.pages,
 
 
