@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/src/features/screen/logout_screen/log_out.dart';
 import 'package:news_app/src/features/screen/screen1/all_page/account_page.dart';
 import 'package:news_app/src/features/screen/screen1/all_page/home_page.dart';
-import 'package:news_app/src/features/screen/screen1/all_page/logout.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
   final List<Widget> item = [
-     const HomePage(),
+    const HomePage(),
     const LogOut(),
     const AccountPage()
   ];
@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.logout_rounded), label: "LogOut"),
+            BottomNavigationBarItem(icon: LogOut(), label: "LogOut"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.account_box), label: "Account"),
           ]),
